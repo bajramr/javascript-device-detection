@@ -2,6 +2,8 @@
 
 A beginner exercise by Bajram Ramadan, based on the original user-agent example.
 
+![JavaScript device detection example](https://new.bajram.dev/wp-content/uploads/2026/10/javascript-device-detection-beginners-featured-1536x864.webp)
+
 ## Start
 
 1. Open index.html in a browser.
