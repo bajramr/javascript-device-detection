@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Check Your Device</title>
+</head>
+<body>
+  <h1>Check Your Device</h1>
+  <p>This beginner example looks for device names in your browser's user-agent.</p>
+
+  <!-- JavaScript will put the result inside this paragraph. -->
+  <p id="result">Checking...</p>
+
+  <p>Note: This is a simple learning example. The result may be incorrect.</p>
+
+  <script>
+    // Get the browser's user-agent and make all letters lowercase.
+    const userAgent = navigator.userAgent.toLowerCase();
+
+    // Check whether the string contains these names.
+    const iPhone = /iphone/.test(userAgent);
+    const Android = /android/.test(userAgent);
+    const iPadTablet = /ipad/.test(userAgent);
+
+    // Android without "mobile" is often a tablet.
+    const isTablet = iPadTablet || (Android && !/mobile/.test(userAgent));
+
+    // Look for common desktop operating system names.
+    const isDesktop = /windows|macintosh|linux|x11/.test(userAgent)
+      && !iPhone && !Android && !iPadTablet;
+
+    // Start with a message for browsers that do not match.
+    let message = "Device type could not be identified.";
+
+    // Choose a message based on the first match.
+    if (iPhone) {
+      message = "Your browser's user-agent contains iPhone.";
+    } else if (isTablet) {
+      message = "Possible tablet (iPad or Android tablet).";
+    } else if (Android) {
+      message = "Possible Android phone.";
+    } else if (isDesktop) {
+      message = "Possible desktop or laptop computer.";
+    }
+
+    // Show the message on the page.
+    document.getElementById("result").textContent = message;
+  </script>
+</body>
+</html>
