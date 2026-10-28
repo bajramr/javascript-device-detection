@@ -4,8 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Check Your Device</title>
+  <style>
+    /* These styles belong to this example, not the shared header. */
+    body { margin: 0; background: #fafbff; color: #151a34; font: 16px/1.7 system-ui, sans-serif; }
+    .demo-content { width: min(760px, calc(100% - 40px)); margin: 48px auto; }
+    .demo-content h1 { line-height: 1.2; letter-spacing: -1px; }
+    #result { padding: 20px; border: 1px solid #e2e7f4; border-radius: 12px; background: white; }
+  </style>
 </head>
 <body>
+
+  <main class="demo-content">
   <h1>Check Your Device</h1>
   <p>This beginner example looks for device names in your browser's user-agent.</p>
 
@@ -13,6 +22,8 @@
   <p id="result">Checking...</p>
 
   <p>Note: This is a simple learning example. The result may be incorrect.</p>
+
+  </main>
 
   <script>
     // Get the browser's user-agent and make all letters lowercase.
